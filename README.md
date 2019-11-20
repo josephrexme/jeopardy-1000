@@ -1,5 +1,7 @@
 # Jeopardy Readme
 
+![Dark Screen Jeopardy Demo](https://github.com/josephrexme/jeopardy-1000/blob/master/screenshots/5a058fa6d928351180d502fb42f4c438.gif)
+
 This is a jeopardy web game that uses services from [jService][1].
 
 ### Running The Project
