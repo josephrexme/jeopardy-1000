@@ -23,8 +23,10 @@ npm start
 To run tests:
 
 ```
-npm test
+npm test --rootDir tests
 ```
+
+> The extra rootDir flag is needed to workaround a react-scripts path glitch
 
 For production deployments, the app is built into the `build` directory
 with the command:
@@ -33,6 +35,10 @@ with the command:
 npm run build
 ```
 
+### Game Cheat
+
+Look in the browser console to see the double jeopardy object if you
+want to be lucky!
 
 
 

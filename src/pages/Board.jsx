@@ -92,7 +92,7 @@ const Item = ({ clue, setDouble, children }) => {
   };
 
   return (
-    <button disabled={selection.list.includes(clue.id)} onClick={captureClick}>{children}</button>
+    <button disabled={selection.list.includes(clue.id)} onClick={captureClick} data-testid="grid-btn">{children}</button>
     );
 };
 
@@ -172,7 +172,7 @@ const Board = () => {
       <main>
         <Text as="h1" align="center">Jeopardy - Let's Play</Text>
         { state.status === 'failed' && <Text align="center">An Error Occured</Text> }
-        <Grid cols={state.categoryCount} rows={state.clueCount}>
+        <Grid cols={state.categoryCount} rows={state.clueCount} data-testid="grid">
           {
             state.categories.map(category => (
               <div key={category.id}>
@@ -191,8 +191,8 @@ const Board = () => {
         <section>
           <form>
             <Text as="p">
-              Categories to show:{` `}
-              <select onChange={e => dispatch({ type: 'FETCH', payload: { categoryCount: e.target.value }})} defaultValue="6">
+              <label htmlFor="categoryCount">Categories to show: </label>
+              <select id="categoryCount" onChange={e => dispatch({ type: 'FETCH', payload: { categoryCount: e.target.value }})} defaultValue="6" data-testid="category-count">
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
@@ -204,8 +204,8 @@ const Board = () => {
               </select>
             </Text>
             <Text as="p">
-              Clues per column:{` `}
-              <select onChange={e => dispatch({ type: 'FETCH', payload: { clueCount: e.target.value }})} defaultValue="5">
+              <label htmlFor="clueCount">Clues per column: </label>
+              <select id="clueCount" onChange={e => dispatch({ type: 'FETCH', payload: { clueCount: e.target.value }})} defaultValue="5" data-testid="clue-count">
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>

@@ -50,9 +50,9 @@ const Clue = ({ location }) => {
     <BoardRoot>
       <main>
         { state.status === 'failed' && <Text align="center">An Error Occured</Text> }
-        <Text as="h1">{state.clue[display]}</Text>
+        <Text as="h1" data-testid="title">{state.clue[display]}</Text>
         <Text>
-          <Button onClick={toggleDisplay}>Show <Text as="span" transform="capitalize">{getOpposite(display)}</Text></Button>
+          <Button onClick={toggleDisplay} data-testid="toggle-btn">Show <Text as="span" transform="capitalize">{getOpposite(display)}</Text></Button>
           <Button as={Link} to="/">Done</Button>
         </Text>
       </main>
